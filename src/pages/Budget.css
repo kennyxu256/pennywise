@@ -242,3 +242,131 @@
   font-weight: 600;
   color: #1f2937;
 }
+
+.rule-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.rule-section h2 {
+  color: #1f2937;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.rule-section > p {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+.rule-breakdown {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.rule-card {
+  background: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 2px solid #e5e7eb;
+}
+
+.rule-card h4 {
+  margin: 0 0 0.75rem 0;
+  color: #1f2937;
+  font-size: 1.1rem;
+}
+
+.rule-target {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #dc2626;
+  margin: 0.5rem 0;
+}
+
+.rule-actual {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin: 0.5rem 0;
+}
+
+.rule-status {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0 0;
+}
+
+.goal-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.goal-section h2 {
+  color: #1f2937;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.goal-section > p {
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.goal-input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  margin-bottom: 1rem;
+}
+
+.goal-input:focus {
+  outline: none;
+  border-color: #dc2626;
+}
+
+.goal-analysis {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border-left: 4px solid;
+  border-radius: 8px;
+}
+
+.goal-analysis.on-track {
+  background: #f0fdf4;
+  border-color: #22c55e;
+}
+
+.goal-analysis.on-track h3,
+.goal-analysis.on-track p {
+  color: #166534;
+}
+
+.goal-analysis.off-track {
+  background: #fef2f2;
+  border-color: #dc2626;
+}
+
+.goal-analysis.off-track h3,
+.goal-analysis.off-track p {
+  color: #991b1b;
+}
+
+.goal-analysis h3 {
+  margin: 0 0 0.75rem 0;
+}
+
+.goal-analysis p {
+  margin: 0;
+  line-height: 1.6;
+}

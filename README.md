@@ -1,18 +1,37 @@
-# Pennywise - AI-Powered Financial Coach
+# Pennywise - AI-Powered Lifestyle Creep Detector
 
 ## Problem Statement
 
 Many people struggle with personal finance due to a lack of visibility and personalized, actionable advice. Manually tracking every expense is tedious, and generic budgeting apps often fail to inspire lasting behavioral change. As a result, people are often unaware of wasteful spending habits, miss opportunities to save, and feel anxious about their financial future.
 
-**Pennywise** transforms raw transaction data into personalized insights that empower users to take control of their financial lives using AI-powered analysis.
+**Pennywise** transforms raw transaction data into personalized insights that empower users to take control of their financial lives—with a special focus on detecting lifestyle creep before it becomes permanent.
 
 ## Key Features
 
-- **AI-Powered Insights**: Upload your bank transactions and receive personalized financial advice tailored to your spending patterns
-- **Lifestyle Creep Detection**: Identifies gradual increases in spending that erode savings potential, with severity scoring
-- **Smart Budgeting**: Simple range-based budget setup that compares against actual spending
-- **Spending Analysis**: Automatic categorization and visualization of your expenses with intelligent deduplication
-- **Privacy-First**: All processing happens locally - your financial data never leaves your machine
+### 🎯 Lifestyle Creep Detection (Our Signature Feature)
+Catch those sneaky spending increases before they become habits. Our AI analyzes your spending patterns over time to identify:
+- Gradual increases in discretionary categories (dining, rideshare, shopping)
+- Severity scoring (Low/Moderate/High) with specific thresholds
+- Month-over-month trend analysis
+- Category-specific recommendations
+
+Just because PennyWise is a creep doesn't mean you need lifestyle creep!
+
+### 📊 Transaction Analysis
+- Upload CSV files from any bank
+- Automatic categorization and deduplication
+- Interactive spending visualizations
+- AI-powered insights tailored to your patterns
+
+### 💰 Smart Budgeting
+- Simple range-based budget setup
+- Compare actual spending vs. goals
+- No tedious penny-counting required
+
+### 🔒 Privacy-First
+- All processing happens locally
+- Your financial data never leaves your machine
+- Only anonymized summaries sent to AI
 
 ## Getting Started
 
@@ -46,13 +65,13 @@ Many people struggle with personal finance due to a lack of visibility and perso
 
 You need to run both the backend server and frontend development server:
 
-1. **Start the backend server** (in one terminal):
+1. **Start the backend server** (in one terminal tab):
    ```bash
    npm run server
    ```
    The server will start on `http://localhost:3001`
 
-2. **Start the frontend** (in a separate terminal):
+2. **Start the frontend** (in a separate terminal tab):
    ```bash
    npm run dev
    ```
@@ -69,29 +88,31 @@ Export transaction data from your bank(s) as CSV files. Most banks allow this th
 - Optional: `Debit`/`Credit` columns (if amounts aren't signed)
 - Date format: MM/DD/YYYY or similar standard formats
 
-### 2. Upload Your Data
+### 2. Upload and Analyze
 
-- Navigate to the **Dashboard** tab
+- Navigate to the **Transaction Analyzer** tab
 - Click "Choose Files" and select your CSV file(s)
 - You can upload multiple files from different banks
 - Click "Analyze Spending" to process your transactions
 
-### 3. Review Your Insights
+### 3. Check for Lifestyle Creep
 
-**Dashboard**: View your spending breakdown by category with interactive charts
+- Go to the **Lifestyle Creep Detector** tab
+- View your severity score (Low/Moderate/High)
+- See which categories are driving spending increases
+- Get specific recommendations to curb the creep
 
-**AI Insights**: Get personalized recommendations based on your spending patterns, including:
+### 4. Review AI Insights
+
+Get personalized recommendations including:
 - Spending habit analysis
 - Savings opportunities
 - Behavioral patterns
 - Actionable next steps
 
-**Lifestyle Creep**: Discover if your spending has gradually increased over time with:
-- Severity assessment (Low/Moderate/High)
-- Specific categories driving the increase
-- Month-over-month trend analysis
+### 5. Set Your Budget
 
-**Budget**: Set up a simple budget using range selectors and compare against actual spending
+Use simple range selectors to set budget targets and compare against actual spending.
 
 ## Privacy & Security
 

@@ -8,36 +8,37 @@ function Home() {
     <div className="home">
       <div className="home-intro">
         <div className="clown-emoji">🤡</div>
-        <h1 className="home-title">I'm PennyWise, your financially responsible personal budgeting coach (who bears no relation to the antagonist of It)!</h1>
+        <h1 className="home-title">I'm PennyWise, your financially responsible personal budgeting coach!</h1>
+        <p className="home-subtitle">(I bear no relation to the antagonist from It, although I see where you're coming from.)</p>
         <h1 className="home-title">What would you like to do today?</h1>
       </div>
       <div className="home-cards">
         <div className="home-card" onClick={() => navigate('/spending')}>
-          <h3>View Spending Activity</h3>
-          <p>Analyze your transaction history and spending patterns, with insights powered by AI</p>
-        </div>
-        <div className="home-card" onClick={() => navigate('/budget')}>
-          <h3>View My Budget</h3>
-          <p>Track your budget goals and savings progress. See our recommendations for financial health!</p>
+          <h3>Analyze Transactions</h3>
+          <p>Upload your bank statements and get AI-powered insights on your spending patterns</p>
         </div>
         <div className="home-card" onClick={() => navigate('/lifestyle-creep')}>
-          <h3>Am I Experiencing Lifestyle Creep?</h3>
-          <p>Detect upward spending drifts before they become permanent habits. The only "creep" here should be PennyWise!</p>
+          <h3>Detect Lifestyle Creep</h3>
+          <p>Catch those sneaky spending increases before they become permanent habits. The only creep here should be me!</p>
+        </div>
+        <div className="home-card" onClick={() => navigate('/budget')}>
+          <h3>Set Your Budget</h3>
+          <p>Create a simple budget and see how you're tracking against your goals</p>
         </div>
       </div>
 
       <div className="about-section">
         <h2>About PennyWise</h2>
         <p>
-          PennyWise is your AI-powered financial coach designed specifically for young professionals 
-          navigating their first real income. We help you build healthy money habits early, before 
-          lifestyle creep becomes permanent.
+          PennyWise is your AI-powered financial coach that helps you catch lifestyle creep before 
+          it catches you. We analyze your spending patterns to detect those subtle increases in 
+          rideshare, dining, and shopping that signal lifestyle creep—before they derail your 
+          financial future.
         </p>
         <p>
-          Unlike traditional budgeting apps that just track numbers, PennyWise uses AI to detect 
-          patterns in your spending and provide personalized insights. We catch the subtle increases 
-          in rideshare, dining, and shopping that signal lifestyle creep—before they derail your 
-          financial future.
+          Unlike traditional budgeting apps that just track numbers, PennyWise uses AI to understand 
+          your spending behavior and provide personalized insights. Think of me as your financially 
+          savvy friend who's not afraid to call out your third DoorDash order this week.
         </p>
         <div className="about-features">
           <div className="feature">

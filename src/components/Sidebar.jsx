@@ -15,13 +15,13 @@ function Sidebar() {
           Home
         </Link>
         <Link to="/spending" className={location.pathname === '/spending' ? 'active' : ''}>
-          Spending Activity
-        </Link>
-        <Link to="/budget" className={location.pathname === '/budget' ? 'active' : ''}>
-          My Budget
+          Transaction Analyzer
         </Link>
         <Link to="/lifestyle-creep" className={location.pathname === '/lifestyle-creep' ? 'active' : ''}>
-          Lifestyle Creep Indicator
+          Lifestyle Creep Detector
+        </Link>
+        <Link to="/budget" className={location.pathname === '/budget' ? 'active' : ''}>
+          Budget Tool
         </Link>
       </nav>
     </div>
