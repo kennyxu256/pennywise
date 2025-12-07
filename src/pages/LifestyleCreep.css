@@ -1,0 +1,253 @@
+.lifestyle-creep-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.lifestyle-creep-page h1 {
+  color: #dc2626;
+  margin-bottom: 2rem;
+}
+
+.creep-score-card {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.score-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 8px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.score-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.score-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+.score-summary h2 {
+  margin-top: 0;
+  color: #1f2937;
+}
+
+.category-analysis h2 {
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.category-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border-left: 4px solid;
+}
+
+.category-card.severity-critical {
+  border-left-color: #dc2626;
+  background: #fef2f2;
+}
+
+.category-card.severity-high {
+  border-left-color: #ea580c;
+  background: #fff7ed;
+}
+
+.category-card.severity-medium {
+  border-left-color: #f59e0b;
+  background: #fffbeb;
+}
+
+.category-card.severity-low {
+  border-left-color: #16a34a;
+  background: #f0fdf4;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.category-emoji {
+  font-size: 1.5rem;
+}
+
+.category-header h3 {
+  margin: 0;
+  flex: 1;
+  text-transform: capitalize;
+}
+
+.change-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.change-badge.increase {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.change-badge.decrease {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.category-analysis-text {
+  color: #4b5563;
+  margin-bottom: 0.75rem;
+}
+
+.category-recommendation {
+  background: white;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+}
+
+.positive-habits {
+  background: #f0fdf4;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #16a34a;
+}
+
+.positive-habits h2 {
+  margin-top: 0;
+  color: #16a34a;
+}
+
+.positive-habits ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.positive-habits li {
+  color: #166534;
+  margin-bottom: 0.5rem;
+}
+
+.action-items {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.action-items h2 {
+  color: #1f2937;
+  margin-top: 0;
+}
+
+.action-intro {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+.action-item {
+  background: #f9fafb;
+  padding: 1.25rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border-left: 4px solid;
+}
+
+.action-item.priority-high {
+  border-left-color: #dc2626;
+}
+
+.action-item.priority-medium {
+  border-left-color: #f59e0b;
+}
+
+.action-item.priority-low {
+  border-left-color: #3b82f6;
+}
+
+.action-header {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.priority-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.priority-high .priority-badge {
+  background: #dc2626;
+  color: white;
+}
+
+.priority-medium .priority-badge {
+  background: #f59e0b;
+  color: white;
+}
+
+.priority-low .priority-badge {
+  background: #3b82f6;
+  color: white;
+}
+
+.action-category {
+  color: #6b7280;
+  font-size: 0.875rem;
+  text-transform: capitalize;
+}
+
+.action-text {
+  color: #1f2937;
+  font-weight: 500;
+  margin: 0 0 0.5rem 0;
+}
+
+.action-impact {
+  color: #16a34a;
+  font-size: 0.875rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.action-link-button {
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.action-link-button:hover {
+  background: #b91c1c;
+}

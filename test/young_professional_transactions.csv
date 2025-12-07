@@ -1,0 +1,58 @@
+date,description,amount,category
+2024-09-05,Trader Joe's,45.32,groceries
+2024-09-08,Chipotle,12.50,dining
+2024-09-10,Uber,15.20,transportation
+2024-09-12,Target,38.90,shopping
+2024-09-15,Starbucks,6.75,dining
+2024-09-18,Netflix,15.99,subscriptions
+2024-09-20,Safeway,52.18,groceries
+2024-09-22,Uber Eats,28.40,dining
+2024-09-25,Spotify,10.99,subscriptions
+2024-09-27,Uber,12.80,transportation
+2024-09-29,AMC Theaters,18.50,entertainment
+2024-10-02,Whole Foods,48.75,groceries
+2024-10-04,Sweetgreen,14.25,dining
+2024-10-06,Uber,18.50,transportation
+2024-10-08,Zara,89.99,shopping
+2024-10-10,Blue Bottle Coffee,8.50,dining
+2024-10-12,Lyft,22.30,transportation
+2024-10-15,Trader Joe's,51.20,groceries
+2024-10-17,DoorDash,35.80,dining
+2024-10-19,Apple Music,10.99,subscriptions
+2024-10-21,Uber,25.40,transportation
+2024-10-23,Sephora,67.50,shopping
+2024-10-25,Postmates,42.15,dining
+2024-10-27,Uber,28.90,transportation
+2024-10-29,H&M,125.40,shopping
+2024-10-31,Starbucks,7.25,dining
+2024-11-01,Safeway,46.80,groceries
+2024-11-03,Cava,16.50,dining
+2024-11-05,Uber,32.75,transportation
+2024-11-07,Amazon Prime,14.99,subscriptions
+2024-11-09,Nordstrom,156.80,shopping
+2024-11-11,DoorDash,48.90,dining
+2024-11-13,Lyft,35.20,transportation
+2024-11-15,Whole Foods,62.40,groceries
+2024-11-17,Nobu,95.50,dining
+2024-11-19,Uber,38.60,transportation
+2024-11-21,Lululemon,128.00,shopping
+2024-11-23,Postmates,52.30,dining
+2024-11-25,Uber,41.25,transportation
+2024-11-27,Disney+,7.99,subscriptions
+2024-11-29,Saks Fifth Avenue,245.00,shopping
+2024-11-30,The Cheesecake Factory,78.40,dining
+2024-12-01,Trader Joe's,55.90,groceries
+2024-12-03,Uber,45.80,transportation
+2024-12-05,Erewhon,89.75,groceries
+2024-12-07,Tao,125.60,dining
+2024-12-09,Lyft,48.30,transportation
+2024-12-11,Revolve,198.50,shopping
+2024-12-13,Caviar,68.90,dining
+2024-12-15,Uber,52.40,transportation
+2024-12-17,HBO Max,15.99,subscriptions
+2024-12-19,Equinox,200.00,subscriptions
+2024-12-21,Catch LA,142.80,dining
+2024-12-23,Uber,58.75,transportation
+2024-12-25,Whole Foods,78.30,groceries
+2024-12-27,Postmates,75.20,dining
+2024-12-29,Bloomingdale's,312.50,shopping

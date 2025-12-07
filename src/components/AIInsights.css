@@ -1,0 +1,67 @@
+.ai-insights {
+  margin-bottom: 32px;
+}
+
+.ai-insights h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.insights-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.insight-card {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid;
+}
+
+.insight-savings {
+  background: #ecfdf5;
+  border-color: #10b981;
+}
+
+.insight-warning {
+  background: #fef3c7;
+  border-color: #f59e0b;
+}
+
+.insight-alert {
+  background: #fee2e2;
+  border-color: #ef4444;
+}
+
+.insight-success {
+  background: #d1fae5;
+  border-color: #10b981;
+}
+
+.insight-tip {
+  background: #dbeafe;
+  border-color: #3b82f6;
+}
+
+.insight-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.insight-content h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.insight-content p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #4b5563;
+}
