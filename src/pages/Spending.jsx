@@ -39,6 +39,7 @@ function Spending({ spendingData, setSpendingData, budgetData, aiInsights, setAi
     const byMonth = {}
     const byDay = {}
     const byCategory = {}
+    const monthCount = new Set()
 
     data.forEach(t => {
       const amount = Math.abs(parseFloat(t.amount))
@@ -50,10 +51,21 @@ function Spending({ spendingData, setSpendingData, budgetData, aiInsights, setAi
         byMonth[monthKey] = (byMonth[monthKey] || 0) + amount
         byDay[dayKey] = (byDay[dayKey] || 0) + amount
         byCategory[t.category] = (byCategory[t.category] || 0) + amount
+        monthCount.add(monthKey)
       }
     })
 
-    return { byMonth, byDay, byCategory }
+    // If viewing all months (annual view), convert to monthly averages
+    const numMonths = monthCount.size
+    const isAnnualView = !monthFilter && numMonths > 1
+    
+    if (isAnnualView) {
+      Object.keys(byCategory).forEach(cat => {
+        byCategory[cat] = byCategory[cat] / numMonths
+      })
+    }
+
+    return { byMonth, byDay, byCategory, isAnnualView, numMonths }
   }
 
   const handleFileUpload = async (e) => {
@@ -357,7 +369,7 @@ function Spending({ spendingData, setSpendingData, budgetData, aiInsights, setAi
             </div>
 
             <div className="card">
-              <h2>Spending by Category</h2>
+              <h2>Spending by Category {insights.isAnnualView && '(Monthly Average)'}</h2>
               <div className="pie-container">
                 <svg viewBox="0 0 200 200" className="pie-chart">
                   {(() => {

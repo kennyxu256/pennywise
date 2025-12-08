@@ -28,87 +28,87 @@ function AIInsights({ insights, budgetData, selectedMonth, cachedInsights, setCa
     const income = budget?.data?.income ? parseFloat(budget.data.income) : null
     const savingsRate = income ? ((income - totalSpending) / income) * 100 : null
     
-    // Calculate category-specific trends for lifestyle creep detection
-    const categoryTrends = {}
-    if (data.transactions && data.transactions.length > 0) {
-      const sortedTransactions = [...data.transactions].sort((a, b) => 
-        new Date(a.date) - new Date(b.date)
-      )
+    // Get month-specific context
+    let monthContext = ''
+    let comparisonContext = ''
+    
+    if (month && data.byMonth) {
+      const allMonths = Object.keys(data.byMonth).sort()
+      const currentMonthIndex = allMonths.indexOf(month)
       
-      // Group by month and category
-      const monthlyByCategory = {}
-      sortedTransactions.forEach(t => {
-        const month = t.date.substring(0, 7) // YYYY-MM
-        if (!monthlyByCategory[month]) monthlyByCategory[month] = {}
-        if (!monthlyByCategory[month][t.category]) monthlyByCategory[month][t.category] = 0
-        monthlyByCategory[month][t.category] += parseFloat(t.amount)
-      })
-      
-      // Calculate trends for each category
-      const months = Object.keys(monthlyByCategory).sort()
-      if (months.length >= 2) {
-        const allCategories = new Set()
-        Object.values(monthlyByCategory).forEach(m => 
-          Object.keys(m).forEach(c => allCategories.add(c))
-        )
+      if (currentMonthIndex > 0) {
+        const prevMonth = allMonths[currentMonthIndex - 1]
+        const prevMonthData = {}
         
-        allCategories.forEach(category => {
-          const values = months.map(m => monthlyByCategory[m][category] || 0)
-          const firstMonth = values[0]
-          const lastMonth = values[values.length - 1]
-          
-          if (firstMonth > 0) {
-            const change = ((lastMonth - firstMonth) / firstMonth) * 100
-            const avgMonthly = values.reduce((a, b) => a + b, 0) / values.length
-            
-            categoryTrends[category] = {
-              change: change.toFixed(1),
-              firstMonth: firstMonth.toFixed(2),
-              lastMonth: lastMonth.toFixed(2),
-              avgMonthly: avgMonthly.toFixed(2),
-              months: months.length
-            }
+        // Calculate previous month's category totals
+        data.transactions?.forEach(t => {
+          const tMonth = t.date.substring(0, 7)
+          if (tMonth === prevMonth) {
+            prevMonthData[t.category] = (prevMonthData[t.category] || 0) + parseFloat(t.amount)
           }
         })
+        
+        comparisonContext = `\nCOMPARISON TO PREVIOUS MONTH (${prevMonth}):\n${
+          Object.entries(data.byCategory)
+            .map(([cat, amt]) => {
+              const prevAmt = prevMonthData[cat] || 0
+              const change = prevAmt > 0 ? ((amt - prevAmt) / prevAmt * 100).toFixed(1) : 'N/A'
+              return `- ${cat}: $${amt.toFixed(0)} (${change !== 'N/A' ? (change > 0 ? '+' : '') + change + '%' : 'new'} vs $${prevAmt.toFixed(0)})`
+            }).join('\n')
+        }`
       }
+      
+      monthContext = `\nANALYZING SPECIFIC MONTH: ${month}`
     }
     
-    const prompt = `You are a financial coach for young professionals (early 20s) who are earning their first real income. Your PRIMARY GOAL is to detect and explain lifestyle creep patterns in detail.
+    const prompt = month 
+      ? `You are a financial coach analyzing spending for a SPECIFIC MONTH.
 
-SPENDING DATA:
+${monthContext}
+
+SPENDING DATA FOR THIS MONTH:
 ${categories.map(([cat, amt]) => `- ${cat}: $${amt.toFixed(0)}`).join('\n')}
 Total spending: $${totalSpending.toFixed(0)}
 ${income ? `Monthly income: $${income.toFixed(0)}` : ''}
 ${savingsRate !== null ? `Savings rate: ${savingsRate.toFixed(1)}%` : ''}
 
-${Object.keys(categoryTrends).length > 0 ? `CATEGORY-SPECIFIC LIFESTYLE CREEP ANALYSIS:
-${Object.entries(categoryTrends)
-  .filter(([, trend]) => Math.abs(parseFloat(trend.change)) > 10)
-  .sort((a, b) => Math.abs(parseFloat(b[1].change)) - Math.abs(parseFloat(a[1].change)))
-  .map(([cat, trend]) => 
-    `- ${cat}: Started at $${trend.firstMonth}, now $${trend.lastMonth} (${trend.change > 0 ? '+' : ''}${trend.change}% over ${trend.months} months)`
-  ).join('\n')}` : ''}
+${comparisonContext}
 
-CRITICAL INSTRUCTIONS:
-1. **Lifestyle Creep is Priority #1**: If ANY category shows >15% increase, create a dedicated insight explaining:
-   - Exact category and percentage increase
-   - Dollar amounts (before → after)
-   - Why this matters for young professionals
-   - Specific action to take (set limit, track weekly, etc.)
+INSTRUCTIONS:
+1. Focus on THIS MONTH's spending patterns
+2. Highlight which categories consumed the most money THIS MONTH
+3. If comparison data exists, explain how spending changed from previous month
+4. Provide specific insights about where money went THIS MONTH
+5. Be concise and actionable
 
-2. **Be Extremely Specific**: Use actual numbers from the data above. Say "Your rideshare spending jumped from $50 to $180 (+260%)" not "rideshare increased significantly"
-
-3. **Multiple Categories**: If 2+ categories show creep, create separate insights for each major one (>30% increase)
-
-4. **Tone**: Friendly but direct. This is serious—lifestyle creep can derail financial futures. Be encouraging but honest.
-
-Return ONLY a JSON array with 4-6 insights (prioritize lifestyle creep warnings). Each insight MUST have:
+Return ONLY a JSON array with 4-5 insights. Each insight MUST have:
 - type: "savings" | "warning" | "alert" | "success" | "tip"
 - icon: single emoji
-- title: specific category name if lifestyle creep (e.g., "Rideshare Spending Up 260%")
-- message: detailed explanation with exact numbers (max 60 words)
+- title: specific insight about this month
+- message: detailed explanation with exact numbers (max 60 words)`
+      
+      : `You are a financial coach analyzing ANNUAL spending patterns.
 
-Focus on categories with biggest increases first.`
+IMPORTANT: The numbers below are MONTHLY AVERAGES across the entire year.
+
+MONTHLY AVERAGE SPENDING DATA:
+${categories.map(([cat, amt]) => `- ${cat}: $${amt.toFixed(0)} per month (average)`).join('\n')}
+Average monthly spending: $${totalSpending.toFixed(0)}
+${income ? `Monthly income: $${income.toFixed(0)}` : ''}
+${savingsRate !== null ? `Savings rate: ${savingsRate.toFixed(1)}%` : ''}
+
+INSTRUCTIONS:
+1. These are MONTHLY AVERAGES - treat them as typical monthly spending
+2. Analyze overall spending patterns and identify biggest categories
+3. Look for areas where monthly averages seem high
+4. Provide strategic insights about financial health
+5. Be encouraging but honest about areas for improvement
+
+Return ONLY a JSON array with 4-6 insights. Each insight MUST have:
+- type: "savings" | "warning" | "alert" | "success" | "tip"
+- icon: single emoji
+- title: specific category or pattern
+- message: detailed explanation with exact numbers (max 60 words)`
 
     try {
       const response = await fetch('http://localhost:3001/api/insights', {
