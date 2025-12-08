@@ -194,7 +194,6 @@ PennyWise follows a client-server architecture with a clear separation of concer
 - Real-time transaction syncing without manual CSV uploads
 - Support for checking accounts, credit cards, and investment accounts
 - Automatic categorization with bank-provided metadata
-- Estimated implementation: 2-3 weeks
 
 **2. User Authentication & Profile Management**
 - User accounts with secure authentication (OAuth 2.0 or Auth0)
@@ -202,32 +201,11 @@ PennyWise follows a client-server architecture with a clear separation of concer
 - Cloud database (PostgreSQL or MongoDB) for data persistence
 - Session management to maintain state across browser refreshes
 - User preferences and customizable budget categories
-- Estimated implementation: 3-4 weeks
 
-**3. Advanced Analytics**
-- Predictive spending forecasts using historical trends
-- Anomaly detection for unusual transactions
-- Comparative analysis against peer spending patterns
-- Custom reporting and data export features
-- Estimated implementation: 2-3 weeks
-
-**4. Mobile Application**
+**3. Mobile Application**
 - React Native mobile app for iOS and Android
 - Push notifications for spending alerts and budget warnings
 - Receipt scanning with OCR for manual entry
-- Estimated implementation: 6-8 weeks
-
-**5. Enhanced Lifestyle Creep Detection**
-- Machine learning model trained on spending patterns
-- Personalized thresholds based on income and location
-- Predictive alerts before creep becomes significant
-- Estimated implementation: 4-5 weeks
-
-**6. Social Features**
-- Anonymous spending comparisons with similar demographics
-- Community-driven budgeting tips and challenges
-- Accountability partners for financial goals
-- Estimated implementation: 3-4 weeks
 
 ## Contributing
 
